@@ -13,6 +13,10 @@ RUN echo APT::Install-Suggests "0"; >> /etc/apt/apt.conf
 RUN apt-get -y update && apt-get -y dist-upgrade
 
 RUN apt-get install -y python-cheetah git
+RUN apt-get install -y software-properties-common python-software-properties
+RUN add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu precise multiverse" && \
+    apt-get -y update
+RUN apt-get install unrar
 
 RUN apt-get -y autoremove && \
     apt-get -y clean && \
