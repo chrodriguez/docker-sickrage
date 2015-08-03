@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 DIR=/sickrage
+SHOWS=/shows
 USER=sickrage
 
 getent passwd $USER || useradd $USER -m -d $DIR
@@ -20,6 +21,6 @@ if [ ! -d $DIR/.git ]; then
   git clone https://github.com/echel0n/SickRage.git $DIR
 fi
 
-chown -R $USER:$USER_GID $DIR
+chown -R $USER:$USER_GID $DIR $SHOWS
 
 exec su - $USER -s /bin/bash -c "cd $DIR && /usr/bin/python SickBeard.py"
