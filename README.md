@@ -9,7 +9,7 @@ will not have permission problems.
 docker run -e TZ=America/Argentina/Buenos_Aires \
   -e USER_ID=`id -u` \
   -e USER_GID=`id -g` \
-  -p 8091:8091 \
+  -p 8081:8081 \
   -v `pwd`/sickrage:/sickrage \
   -v `pwd`/shows:/shows \
   -d \
