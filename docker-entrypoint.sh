@@ -18,9 +18,9 @@ fi
 [ -d "$DIR" ] || mkdir -p "$DIR"
 
 if [ ! -d $DIR/.git ]; then
-  git clone https://github.com/echel0n/SickRage.git $DIR
+  git clone https://github.com/SickRage/SickRage.git $DIR
 fi
 
 chown -R $USER:$USER_GID $DIR $SHOWS
 
-exec su - $USER -s /bin/bash -c "cd $DIR && /usr/bin/python SickBeard.py"
+exec su - $USER -s /bin/bash -c "cd $DIR && /usr/bin/python SickBeard.py -q"
